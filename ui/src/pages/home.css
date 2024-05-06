@@ -1,0 +1,55 @@
+.home {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registerTitle {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+input {
+    margin-top: 1rem;
+    width: 75%;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    margin-left: 1rem;
+    background-color: rgb(252, 249, 247);
+}
+
+.deptSelect,
+.levelSelect {
+    padding: 5px;
+    border: none;
+    width: 70%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.submitBtn {
+    margin-top: 1rem;
+    color: aliceblue;
+    border: none;
+}
+
+.submitBtn:hover {
+    background-color: rgb(84, 81, 252);
+    cursor: pointer;
+}
+
