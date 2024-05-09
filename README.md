@@ -11,7 +11,7 @@ To run this application, you will need to have PostgreSQL installed and properly
 
 1. Clone the repository:
 
-```git clone <repository-url>```
+```git clone https://github.com/GabrielIkpolo/student-registry.git```
 
 
 2. Navigate to the UI directory and install dependencies:
