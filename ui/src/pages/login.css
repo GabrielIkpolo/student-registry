@@ -1,0 +1,40 @@
+.login {
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tittleBar {
+    align-self: center;
+    margin-top: 8rem;
+    width: 80%;
+}
+
+.errorMessage {
+    color: red;
+    margin: auto;
+}
+
+.registerForm {
+    margin-top: 1rem;
+    width: 80%;
+    margin: auto;
+}
+
+.theInputes{
+    padding: 10px;
+}
+
+.registerBtn{
+    margin-top: 1rem;
+    color: white;
+    width:80%;
+    padding: 10px;
+}
+
+.registerBtn:hover{
+    cursor: pointer;
+    background-color: rgb(112, 112, 243);
+}

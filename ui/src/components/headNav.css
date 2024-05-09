@@ -4,9 +4,11 @@
     background-color: rgb(136, 67, 109);
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0%;
 }
 
-.logo img{
+.logo img {
     padding: 1rem;
     width: 2rem;
     height: 2rem;

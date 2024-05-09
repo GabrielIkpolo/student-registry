@@ -1,3 +1,11 @@
 .footer{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgb(136, 67, 109);
+    color: whitesmoke;
+}
 
+.footer p{
+    margin: 1rem;
 }

@@ -6,7 +6,7 @@ const axiosInstance = axios.create({
   baseURL: baseUrl,
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${localStorage.getItem('token')}`, // assuming you store your token in localStorage
+    Authorization: `Bearer ${sessionStorage.getItem('token')}`
   },
 });
 

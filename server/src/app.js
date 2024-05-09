@@ -4,10 +4,15 @@ import cors from 'cors';
 import studenRoute from './routes/studentRoute.js';
 import querryDbRoute from "./routes/querryDbRoute.js";
 import departmentsRoute from "./routes/departmentsRoute.js";
+import userRoute from "./routes/userRoute.js";
+import registerRoute from "./routes/registerRoute.js";
+import loginRoute from "./routes/loginRoute.js";
+import morgan from "morgan";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(morgan("dev"));
 
 app.use(cors({
     origin: ["http://localhost:3000", "http://localhost:5173"]
@@ -20,6 +25,11 @@ app.use("/api", studenRoute);
 app.use("/api", querryDbRoute);
 app.use("/api/students", querryDbRoute);
 app.use("/", departmentsRoute);
+
+app.use("/api", userRoute);
+app.use("/api", registerRoute);
+app.use("/api", loginRoute);
+
 
 app.get("/", (req, res) => {
     return res.json("Welcome to your  Student Registration Portal");

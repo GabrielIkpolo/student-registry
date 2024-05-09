@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./home.css";
 import axiosInstance from '../context/AxiosInstance';
+import toast from "react-hot-toast";
 
 const Home = () => {
     const [email, setEmail] = useState('');
@@ -52,6 +53,8 @@ const Home = () => {
             setPhoneNumber('');
 
             alert('Student registered successfully!');
+            toast.success("You have registered successfully");
+
 
         } catch (error) {
             console.error('Error registering student:', error);
@@ -62,7 +65,7 @@ const Home = () => {
     return (
         <>
             <div className='home'>
-                <h2 className='registerTitle'>Register Student</h2>
+                <h2 className='registerTitle'>Student Registry</h2>
 
                 <form onSubmit={handleSubmit}>
 
