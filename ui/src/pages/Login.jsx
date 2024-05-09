@@ -53,12 +53,9 @@ const Login = () => {
             setError("");
 
             if (isRegistering === false) {
-                console.log("IsRegistering is false:", isRegistering);
-
+                // console.log("IsRegistering is false:", isRegistering);
                 // perform your login functionality here
                 handleLogin(data?.token, data);
-
-                console.log("I have sucessfully logged in");
                 navigate("/admin");
             }
 
