@@ -8,6 +8,11 @@ import userRoute from "./routes/userRoute.js";
 import registerRoute from "./routes/registerRoute.js";
 import loginRoute from "./routes/loginRoute.js";
 import morgan from "morgan";
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 const app = express();
@@ -15,8 +20,12 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use(cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"]
+    origin: ["http://localhost:3000", "http://localhost:5173",
+        "http://localhost:4173", "http://0.0.0.0:0"
+    ]
 }));
+
+
 
 const port = process.env.PORT || 8050;
 
@@ -36,11 +45,6 @@ app.get("/", (req, res) => {
 });
 
 
-// Error handling middleware (optional)
-// app.use((err, req, res, next) => {
-//     console.error(err.stack); // Log errors for debugging
-//     res.status(err.statusCode || 500).json({ error: err.message }); // Send error response
-// });
 
 app.all('*', (req, res) => {
     return res.status(404).json({ error: "The requested path not found" });

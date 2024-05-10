@@ -11,7 +11,7 @@ const Home = () => {
     const [levels, setlevels] = useState(['100L', '200L', '300L', '400L', '500L']);
     const [matriculationNumber, setMatriculationNumber] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [departments, setDepartments] = useState([]);
+    const [departments, setDepartments] = useState({});
 
     // Fetch departments from backend when component mounts
     const fetchDepartments = async () => {
@@ -28,9 +28,6 @@ const Home = () => {
     useEffect(() => {
         fetchDepartments();
     }, []);
-
-    // console.log("This is your department dtata==>", departments.map(d => (d)));
-    // console.log("These are your Levels==>", levels);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -83,8 +80,13 @@ const Home = () => {
                         Department*:
                         <select className='deptSelect' value={department} onChange={(e) => setDepartment(e.target.value)} required>
                             <option className='deptSelect' value="">Select Department</option>
-                            {departments.map((dept) => (
+                            {/* {departments.map((dept) => (
                                 <option key={dept} value={dept}>{dept}</option>
+                            ))} */}
+
+                            {/* the stub is here */}
+                            {Object.entries(departments).map(([key, value]) => (
+                                <option key={key} >{departments[key]}</option>
                             ))}
                         </select>
                     </label>
@@ -96,7 +98,7 @@ const Home = () => {
                             <option value="">Select Level</option>
                             {levels.map((l) => (
                                 <option key={l} value={l} >{l}</option>
-                            ))}    
+                            ))}
                         </select>
                     </label>
 
@@ -105,7 +107,7 @@ const Home = () => {
                         <input type="text" value={matriculationNumber} onChange={(e) => setMatriculationNumber(e.target.value)} required />
                     </label>
 
-                    
+
                     <label>
                         Phone Number:
                         <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />

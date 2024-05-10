@@ -7,8 +7,6 @@ const prisma = new PrismaClient();
 const departments = ['Computer Science', 
 'Engineering', 'Mathematics', 'Physics', 'Biology', 'Civil Engineering', 'Political Science',
 'Law', 'Nursing'
-
-
 ];
 
 //Function to get all departments
