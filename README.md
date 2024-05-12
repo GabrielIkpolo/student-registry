@@ -14,30 +14,14 @@ To run this application, you will need to have PostgreSQL installed and properly
 ```git clone https://github.com/GabrielIkpolo/student-registry.git```
 
 
-2. Navigate to the UI directory and install dependencies:
+2. Create a `.env` file in the root directory of both the UI and server directories.
 
-```
-cd ui
-npm install
-```
-
-
-3. Navigate to the server directory and install dependencies:
-
-```
-cd server
-npm install
-```
-
-
-4. Create a `.env` file in the root directory of both the UI and server directories.
-
-5. In the UI `.env` file, add:
+3. In the UI `.env` file, add:
 ```
 VITE_REACT_APP_API_BASE_URL="http://localhost:5000"
 ```
 
-6. In the server `.env` file, add:
+4. In the server `.env` file, add:
 
 ```
 PORT=5000
@@ -47,6 +31,32 @@ ALLOWED_ORIGINS="http://localhost:5000"
 
 DATABASE_URL="postgresql://<your-username>:<your-password>@localhost:5432/student_registry?schema=public"
 ```
+
+5. Navigate to the UI directory and install dependencies:
+
+```
+cd ui
+npm install
+```
+
+6. Navigate to the server directory and install dependencies:
+
+```
+cd server
+npm install
+npx prisma generate
+npx prisma db push
+```
+
+
+Once all dependencies are installed, start both applications (UI and server) separately by running:
+
+```npm run dev``` for the ui
+
+and 
+
+```npm run start``` for the server
+
 
 ### Usage
 
@@ -65,12 +75,3 @@ Example JSON data:
 }
 
 ```
-Once all dependencies are installed, start both applications (UI and server) separately by running:
-
-```npm run start```
-
-or
-
-```npm run dev```
-
-for development mode.
