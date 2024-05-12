@@ -124,7 +124,7 @@ const updateStudent = async (req, res) => {
 const deleteStudent = async (req, res) => {
 
     const identifier = req.params.identifier;
-    console.log(identifier);
+    // console.log(identifier);
 
     try {
         // Checks if student exists

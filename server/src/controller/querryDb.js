@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 // Get All Students by Level
 const getStudentByLevel = async (req, res) => {
     const { level } = req.params;
-    console.log(level);
+    // console.log(level);
     try {
 
         const student = await prisma.student.findMany({
