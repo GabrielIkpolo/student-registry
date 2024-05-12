@@ -49,13 +49,13 @@ const Home = () => {
             setMatriculationNumber('');
             setPhoneNumber('');
 
-            alert('Student registered successfully!');
+            // alert('Student registered successfully!');
             toast.success("You have registered successfully");
 
 
         } catch (error) {
             console.error('Error registering student:', error);
-            alert('An error occurred while registering student.');
+            toast.error('An error occurred while registering student.');
         }
     };
 
@@ -84,7 +84,6 @@ const Home = () => {
                                 <option key={dept} value={dept}>{dept}</option>
                             ))} */}
 
-                            {/* the stub is here */}
                             {Object.entries(departments).map(([key, value]) => (
                                 <option key={key} >{departments[key]}</option>
                             ))}

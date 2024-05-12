@@ -25,6 +25,7 @@ label {
 
 input {
     margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 75%;
     padding: 5px;
     border: none;
@@ -53,3 +54,37 @@ input {
     cursor: pointer;
 }
 
+
+@media (max-width:576px) {
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 75%;
+        margin: auto;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    input {
+        margin-bottom: 1rem;
+    }
+
+    .deptSelect {
+        margin-bottom: 1rem;
+    }
+
+    .levelSelect {
+        display:block;
+        margin-bottom: 1rem;
+    }
+
+    .submitBtn{
+        margin-bottom: 3rem;
+    }
+}
