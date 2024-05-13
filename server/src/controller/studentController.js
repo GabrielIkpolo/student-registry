@@ -4,10 +4,39 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 // Predefined array of departments
-const departments = ['Computer Science', 
-'Engineering', 'Mathematics', 'Physics', 'Biology', 'Civil Engineering', 'Political Science',
-'Law', 'Nursing'
+const departments = [
+    'Accounting',
+    'Agric Engineering',
+    'Anatomy',
+    'BCH',
+    'Biology',
+    'Busssiness Administration',
+    'Chemistry',
+    'Civil Engineering',
+    'Computer Engineering',
+    'Computer Information Science',
+    'Computer Information Technology',
+    'Computer Science',
+    'Cyber Security',
+    'Economics',
+    'Electrical Electronics Engr',
+    'Engineering',
+    'Law',
+    'LIS',
+    'mass Comm.',
+    'Mathematics',
+    'MCB',
+    'Mechanical Engineering',
+    'MLS',
+    'Nursing',
+    'Physics',
+    'Physiology',
+    'Political Science',
+    'Public Admin.',
+    'Public Health',
+    'Software Engineering'
 ];
+
 
 //Function to get all departments
 const getDepartments = (req, res) => {
