@@ -59,6 +59,18 @@ const Home = () => {
         }
     };
 
+
+    // Wake up some db from some sleepy slumber  
+    window.addEventListener('load', async () => {
+        try {
+            const { data } = await axiosInstance.get("/api/student");
+            // console.log("We  have got our data", data);
+        } catch (error) {
+            console.log("Error fetching data", error);
+        }
+    });
+
+
     return (
         <>
             <div className='home'>
