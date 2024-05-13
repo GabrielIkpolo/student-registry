@@ -17,7 +17,6 @@ const Home = () => {
     const fetchDepartments = async () => {
         try {
             const { data } = await axiosInstance.get('/the-department');
-            // console.log(data);
             setDepartments(data);
         } catch (error) {
             console.error('Error fetching departments:', error);
@@ -32,7 +31,7 @@ const Home = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axiosInstance.post('/api/student', {
+            const {data} = await axiosInstance.post('/api/student', {
                 email,
                 fullName,
                 department,
@@ -40,6 +39,14 @@ const Home = () => {
                 matriculationNumber,
                 phoneNumber,
             });
+
+            if (data.error) {
+                console.log("You have errors in your data", data.error);
+                toast.error(data.error);
+                return;
+            }
+
+            toast.success("You have registered successfully");
 
             // Clear form fields after successful registration
             setEmail('');
@@ -49,15 +56,23 @@ const Home = () => {
             setMatriculationNumber('');
             setPhoneNumber('');
 
-            // alert('Student registered successfully!');
-            toast.success("You have registered successfully");
-
-
         } catch (error) {
             console.error('Error registering student:', error);
             toast.error('An error occurred while registering student.');
         }
     };
+
+
+    // Wake up some db from some sleepy slumber  
+    window.addEventListener('load', async () => {
+        try {
+            const { data } = await axiosInstance.get("/api/student");
+            // console.log("We  have got our data", data);
+        } catch (error) {
+            console.log("Error fetching data", error);
+        }
+    });
+
 
     return (
         <>

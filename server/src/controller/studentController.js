@@ -29,7 +29,7 @@ const register = async (req, res) => {
         });
 
         if (emailExist) {
-            return res.json("Email already exist");
+            return res.json({error :"Email already exist"});
         }
 
         //Checks if department exists in the predefined array
