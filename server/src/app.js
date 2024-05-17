@@ -44,6 +44,6 @@ app.all('*', (req, res) => {
     return res.status(404).json({ error: "The requested path not found" });
 });
 
-app.listen(port, () => {
-    console.log(`App is listening on port : ${port}`);
+app.listen(port, ( ) => {
+    console.log(`App is listening on port: ${port}`);
 });

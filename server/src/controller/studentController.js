@@ -23,7 +23,7 @@ const departments = [
     'Engineering',
     'Law',
     'LIS',
-    'mass Comm.',
+    'Mass Comm.',
     'Mathematics',
     'MCB',
     'Mechanical Engineering',
@@ -39,9 +39,9 @@ const departments = [
 
 
 //Function to get all departments
-const getDepartments = (req, res) => {
+const getDepartments = async (req, res) => {
     try {
-        return res.status(200).json(departments);
+        return await res.json(departments);
     } catch (error) {
         console.error("error fetching departments", error);
         return res.status(500).json({ error: "Internal server error" });

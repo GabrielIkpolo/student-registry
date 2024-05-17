@@ -16,8 +16,8 @@ const Home = () => {
     // Fetch departments from backend when component mounts
     const fetchDepartments = async () => {
         try {
-            const { data } = await axiosInstance.get('/the-department');
-            setDepartments(data);
+            const response = await axiosInstance.get('/the-department');
+            setDepartments(response.data);
         } catch (error) {
             console.error('Error fetching departments:', error);
         }
