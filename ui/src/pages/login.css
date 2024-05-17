@@ -14,7 +14,9 @@
 
 .errorMessage {
     color: red;
-    margin: auto;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 60px;
 }
 
 .registerForm {
